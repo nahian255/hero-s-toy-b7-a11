@@ -5,7 +5,7 @@ import { toyContex } from '../../provider/ToyProvider';
 
 const Login = () => {
 
-    const { loginUser } = useContext(toyContex)
+    const { loginUser, googleLogin } = useContext(toyContex)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -39,29 +39,17 @@ const Login = () => {
 
     // Sing-in with google...
 
-    // const handleGoogleLogin = () => {
-    //     loginWithGoogle()
-    //         .then((result) => {
-    //             const user = result.user;
-    //             navigate(from, { replace: true });
-    //         }).catch((error) => {
-    //             const errorMessage = error.message;
-    //         });
-    // };
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                const user = result.user;
+                navigate(from, { replace: true });
+            }).catch((error) => {
+                const errorMessage = error.message;
+            });
+    };
 
-    // Sing-in with gitHub...
 
-    // const handleGitHubLogin = () => {
-    //     loginWithGithub()
-    //         .then((result) => {
-    //             const user = result.user;
-    //             // console.log(user);
-    //             navigate(from, { replace: true });
-    //         }).catch((error) => {
-    //             const errorMessage = error.message;
-    //             console.log(errorMessage);
-    //         });
-    // }
 
     return (
         <div>
@@ -105,6 +93,13 @@ const Login = () => {
                                         className="btn btn-primary">Login</button>
                                 </div>
                             </form>
+
+                            < div className='ml-6'>
+                                <button
+                                    onClick={handleGoogleLogin}
+                                    className="btn btn-square btn-outline text-2xl"> G
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

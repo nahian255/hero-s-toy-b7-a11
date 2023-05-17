@@ -4,8 +4,17 @@ import { toyContex } from '../../provider/ToyProvider';
 
 const Nav = () => {
 
-    const { user } = useContext(toyContex)
+    const { user, logOut } = useContext(toyContex)
     console.log(user);
+
+    // LogOut function....
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch((err) => {
+                console.log(err);
+            });
+    };
 
     return (
         <div>
@@ -15,7 +24,18 @@ const Nav = () => {
                 </div>
                 <div className="flex-none">
                     <Link to="/" >Home</Link>
-                    <Link className='mx-2' to='/login' >Login</Link>
+
+                    {
+                        user ?
+                            <>
+                                <button className='mx-2' onClick={handleLogout}>Logout</button>
+                            </>
+                            :
+                            <>
+                                <Link className='mx-2' to='/login' >Login</Link>
+                            </>
+                    }
+
                     <Link className='mx-2' to='/register' > Register</Link>
                     <Link className='mx-2' to='/blog' >Blogs</Link>
 

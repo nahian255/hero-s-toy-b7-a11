@@ -7,6 +7,9 @@ import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWith
 export const toyContex = createContext()
 
 const auth = getAuth(app)
+const provider = new GoogleAuthProvider();
+
+
 const ToyProvider = ({ children }) => {
 
 
@@ -38,8 +41,19 @@ const ToyProvider = ({ children }) => {
     }, []);
 
 
+    //  User LogOut code............
+    const logOut = () => {
+        return signOut(auth);
+    };
 
-    const authInfo = { createUser, loading, loginUser, user }
+
+    // Sing in with google...
+    const googleLogin = () => {
+        return signInWithPopup(auth, provider)
+    };
+
+
+    const authInfo = { createUser, loading, loginUser, user, logOut, googleLogin }
     return (
         <div>
             <toyContex.Provider value={authInfo}>
