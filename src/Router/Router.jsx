@@ -3,35 +3,12 @@ import {
 
 } from "react-router-dom";
 
-import Home from "../LastPractics/Home";
-
-import Login from "../LastPractics/Login";
-import Service from "../LastPractics/Service";
-import Registar from "../LastPractics/Registar";
-import Logout from '../LastPractics/Logout';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home></Home>,
-        children: [
-            {
-                path: "/login",
-                element: <Login></Login>
-            },
-            {
-                path: "/register",
-                element: <Registar></Registar>
-            },
-            {
-                path: "/logout",
-                element: <Logout></Logout>
-            },
-            {
-                path: "/service",
-                element: <Service></Service>
-            },
-        ]
+        element: <div> i am home</div>,
+
     },
 
 
