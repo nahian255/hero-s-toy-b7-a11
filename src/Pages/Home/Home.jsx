@@ -1,15 +1,18 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Gallery from './Gallery/Gallery';
-import Tabs from './reactTab/Tabs';
+import Rtabs from './reactTab/Rtabs';
+import Carosol from './Carosol/Carosol';
+import Other from './other/Other';
 
 const Home = () => {
     return (
         <div>
-            <h1>home</h1>
             <Banner></Banner>
             <Gallery></Gallery>
-            <Tabs></Tabs>
+            <Rtabs></Rtabs>
+            <Carosol></Carosol>
+            <Other></Other>
         </div>
     );
 };
