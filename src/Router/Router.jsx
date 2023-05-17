@@ -1,14 +1,35 @@
 import {
     createBrowserRouter,
-
 } from "react-router-dom";
-import Nav from "../Pages/Nav/Nav";
+import Main from "../Layout/Main";
+import Home from "../Pages/Home/Home";
+import Login from "../Pages/Login/Login";
+import Registe from "../Pages/Register/Registe";
+import Bloge from "../Pages/bloge/Bloge";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Nav></Nav>,
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Registe></Registe>
+            },
+            {
+                path: 'blog',
+                element: <Bloge></Bloge>
+            }
+        ]
 
     },
 
