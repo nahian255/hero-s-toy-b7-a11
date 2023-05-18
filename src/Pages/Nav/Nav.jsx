@@ -5,7 +5,7 @@ import { toyContex } from '../../provider/ToyProvider';
 const Nav = () => {
 
     const { user, logOut } = useContext(toyContex)
-    console.log(user);
+    // console.log(user);
 
     // LogOut function....
     const handleLogout = () => {
@@ -24,11 +24,23 @@ const Nav = () => {
                 </div>
                 <div className="flex-none">
                     <Link to="/" >Home</Link>
+                    <Link className='lg:mx-2 text-green-400' to="/allToys" >All Toys</Link>
+                    <Link className='lg:mx-2' to="/myToys" >My Toys</Link>
+                    <Link className='lg:mx-2 text-rose-300' to="/addToy" >Add A Toy</Link>
+                    <Link className='mx-2' to='/blog' >Blogs</Link>
+                    <Link className='mx-2' to='/register' > Register</Link>
 
                     {
                         user ?
                             <>
                                 <button className='mx-2' onClick={handleLogout}>Logout</button>
+                                {/* profile img div */}
+                                <div className="avatar">
+                                    <div className="w-11 rounded-full">
+                                        <img src={user.photoURL} />
+
+                                    </div>
+                                </div>
                             </>
                             :
                             <>
@@ -36,27 +48,7 @@ const Nav = () => {
                             </>
                     }
 
-                    <Link className='mx-2' to='/register' > Register</Link>
-                    <Link className='mx-2' to='/blog' >Blogs</Link>
 
-                    {/* profile img div */}
-                    <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

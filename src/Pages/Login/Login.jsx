@@ -84,7 +84,7 @@ const Login = () => {
                                         placeholder="password"
                                         className="input input-bordered" />
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                        <p >Are you new<Link className='mx-2 text-blue-500' to='/register'> REGISTER HERE</Link>?</p>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
