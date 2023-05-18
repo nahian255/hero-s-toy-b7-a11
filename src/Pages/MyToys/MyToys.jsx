@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
 
     const [datas, setDatas] = useState()
-
-    console.log(datas);
+    // const [users, setUsers] = useState(datas)
+    const [control, setControl] = useState(true)
+    // console.log(users);
 
     useEffect(() => {
         fetch('http://localhost:3000/mytoys')
             .then(res => res.json())
             .then(data => setDatas(data))
-    }, [])
+    }, [control])
+
+    const handelDelete = id => {
+        fetch(`http://localhost:3000/mytoys/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    alert('Are you sure want to delete')
+                    setControl(!control)
+
+                    // const remmingUser = users.filter(user => user._id !== id)
+                    // setUsers(remmingUser)
+                }
+            })
+    }
+
     return (
         <div>
             <h1> My toyss</h1>
@@ -39,8 +59,8 @@ const MyToys = () => {
                                     <td>{data.avilableQuantity}</td>
                                     <td>{data.detail}</td>
                                     <td>{data.price}</td>
-                                    <td><button>edit</button></td>
-                                    <td><button>x</button></td>
+                                    <td><Link to={`/update/${data._id}`}><button>edit</button></Link></td>
+                                    <td><button onClick={() => handelDelete(data._id)}>x</button></td>
                                 </tr>
                             ))
                         }

@@ -17,7 +17,10 @@ const AddToy = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
+                // if (result.insertedId) {
+                //     alert('toy added succesfully')
+                //     form.reset()
+                // }
             });
         // console.log(data);
     };
