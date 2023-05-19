@@ -8,7 +8,6 @@ const MyToys = () => {
 
     const [datas, setDatas] = useState()
     const [control, setControl] = useState(true)
-    const [search, setSearch] = useState('')
 
 
     useEffect(() => {
@@ -38,19 +37,10 @@ const MyToys = () => {
             })
     }
 
-    const handelSearch = () => {
-
-    }
-
     return (
         <div>
             <h1> My toyss</h1>
-            <div>
-                <h1>Search by price</h1>
-                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
-                <button onClick={handelSearch} className="btn btn-outline btn-secondary">Button</button>
 
-            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}

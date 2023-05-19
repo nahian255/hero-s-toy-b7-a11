@@ -59,6 +59,12 @@ const router = createBrowserRouter([
         ]
 
     },
+    {
+        path: "*",
+        element: < div >
+            <img className="w-1/2 " src="https://cdn.vectorstock.com/i/1000x1000/85/43/error-page-not-found-vector-27898543.webp" alt="" />
+        </div >
+    }
 
 
 
