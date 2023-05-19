@@ -5,6 +5,8 @@ const AllToyes = () => {
 
     const [datas, setDatas] = useState()
     const [control, setControl] = useState(true)
+    const [search, setSearch] = useState('')
+
 
     useEffect(() => {
         fetch('http://localhost:3000/alltoys')
@@ -12,9 +14,21 @@ const AllToyes = () => {
             .then(data => setDatas(data))
     }, [control])
 
+    const handelSearch = () => {
+        fetch(`http://localhost:3000/getToysBySearch/${search}`)
+            .then(res => res.json())
+            .then(data => setDatas(data))
+    }
+
     return (
         <div>
             <h1>all toyes</h1>
+            <div>
+                <h1>Search by price</h1>
+                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
+                <button onClick={handelSearch} className="btn btn-outline btn-secondary">Button</button>
+
+            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
@@ -40,8 +54,9 @@ const AllToyes = () => {
                                     <td>{data.avilableQuantity}</td>
                                     <td>{data.detail}</td>
                                     <td>{data.price}</td>
-                                    {/* <td><Link to={`/update/${data._id}`}><button>edit</button></Link></td>
-                                    <td><button onClick={() => handelDelete(data._id)}>x</button></td> */}
+
+                                    <td><Link to={`/details/${data._id}`}><button>View details</button></Link></td>
+
                                 </tr>
                             ))
                         }

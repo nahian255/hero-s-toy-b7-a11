@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { toyContex } from '../../provider/ToyProvider';
 
 const Login = () => {
@@ -13,8 +12,10 @@ const Login = () => {
 
     // console.log(user);
     const location = useLocation();
-    let navigate = useNavigate();
-    let from = location.state?.comming?.pathname || "/";
+    const navigate = useNavigate();
+    console.log(location);
+
+    let from = location.state?.from?.pathname || "/";
 
 
 
@@ -29,7 +30,7 @@ const Login = () => {
             loginUser(email, password)
                 .then((result) => {
                     console.log(result.user);
-                    navigate(from, { replace: true });
+                    navigate(from, { replace: true })
                 })
                 .catch((error) => {
                     setError('email and password not match')
@@ -43,7 +44,7 @@ const Login = () => {
         googleLogin()
             .then((result) => {
                 const user = result.user;
-                navigate(from, { replace: true });
+                navigate(from)
             }).catch((error) => {
                 const errorMessage = error.message;
             });
@@ -86,6 +87,7 @@ const Login = () => {
                                     <label className="label">
                                         <p >Are you new<Link className='mx-2 text-blue-500' to='/register'> REGISTER HERE</Link>?</p>
                                     </label>
+                                    <p>{error}</p>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button
