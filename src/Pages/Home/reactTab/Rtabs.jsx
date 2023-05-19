@@ -6,8 +6,10 @@ import Details from '../../AllToyes/Details';
 
 const Rtabs = () => {
     return (
-        <div className='my-8'>
-            <h1 className='text-green-600 text-4xl mb-8'>Action figure toys Tabs SEction</h1>
+        <div data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" className='my-8'>
+            <h1 data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom" className='text-green-600 text-4xl mb-8'>Action figure toys Tabs SEction</h1>
             <Tabs>
                 <TabList>
                     <Tab>Marvel</Tab>

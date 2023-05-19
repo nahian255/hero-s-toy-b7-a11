@@ -20,7 +20,12 @@ const Nav = () => {
         <div>
             <div className="navbar bg-slate-300">
                 <div className="flex-1">
-                    <Link to="/" className='text-black font-bold text-xl'>Toy gallery</Link>
+                    <div className="avatar">
+                        <div className="w-8 rounded">
+                            <img src="https://www.shutterstock.com/image-vector/vintage-army-action-figure-logo-260nw-2187972853.jpg" alt="Tailwind-CSS-Avatar-component" />
+                        </div>
+                    </div>
+                    <Link to="/" className='text-green-900 font-bold text-xl ml-2'>Hero's Toys</Link>
                 </div>
                 <div className="flex-none">
                     <Link to="/" >Home</Link>

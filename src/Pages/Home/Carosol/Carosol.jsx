@@ -8,7 +8,7 @@ import img6 from "../../../assets/img10 (4).jpg"
 
 const Carosol = () => {
     return (
-        <div className='lg:mx-auto' >
+        <div data-aos="fade-up" className='lg:mx-auto' >
             <h1 className='text-green-400 text-4xl mb-8'>Another part that you see the Toys</h1>
             <div className=" lg:mx-auto h-96 lg:w-1/2 carousel carousel-vertical rounded-box bg-slate-200">
                 <div className="carousel-item h-full">

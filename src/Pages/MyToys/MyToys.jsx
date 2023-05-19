@@ -44,7 +44,8 @@ const MyToys = () => {
 
     return (
         <div>
-            <h1 className='text-green-400 text-4xl m-4'> My Toys</h1>
+            <h1 data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom" className='text-green-400 text-4xl m-4'> My Toys</h1>
             <div>
                 <h1 className='text-xl text-red-500 mb-4'>Search by price</h1>
                 <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
