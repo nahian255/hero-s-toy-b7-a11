@@ -22,14 +22,14 @@ const AllToyes = () => {
 
     return (
         <div>
-            <h1>all toyes</h1>
+            <h1 className='text-green-400 text-4xl m-4'>All Toys</h1>
             <div>
-                <h1>Search by price</h1>
+                <h1 className='text-xl text-red-500 mb-4'>Search by name</h1>
                 <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
-                <button onClick={handelSearch} className="btn btn-outline btn-secondary">Button</button>
+                <button onClick={handelSearch} className="btn btn-outline btn-secondary ml-4">Button</button>
 
             </div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-8">
                 <table className="table w-full">
                     {/* head */}
                     <thead>

@@ -18,6 +18,7 @@ const Rtabs = () => {
                 <TabPanel>
                     <div>
                         <Details></Details>
+                        <Details></Details>
                     </div>
                 </TabPanel>
                 <TabPanel>

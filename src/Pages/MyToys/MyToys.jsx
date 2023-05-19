@@ -8,7 +8,7 @@ const MyToys = () => {
 
     const [datas, setDatas] = useState()
     const [control, setControl] = useState(true)
-
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         fetch(`http://localhost:3000/mytoys/email/${user?.email}`)
@@ -17,7 +17,6 @@ const MyToys = () => {
                 setDatas(data);
             })
     }, [user, control])
-
 
     // dellete button...
     const handelDelete = id => {
@@ -37,11 +36,22 @@ const MyToys = () => {
             })
     }
 
+    const handelSearch = () => {
+        fetch(`http://localhost:3000/getToysBySearch/${search}`)
+            .then(res => res.json())
+            .then(data => setDatas(data))
+    }
+
     return (
         <div>
-            <h1> My toyss</h1>
+            <h1 className='text-green-400 text-4xl m-4'> My Toys</h1>
+            <div>
+                <h1 className='text-xl text-red-500 mb-4'>Search by price</h1>
+                <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
+                <button onClick={handelSearch} className="btn btn-outline btn-secondary mb-4 ml-4">Button</button>
 
-            <div className="overflow-x-auto">
+            </div>
+            <div className="overflow-x-auto mt-2">
                 <table className="table w-full">
                     {/* head */}
                     <thead>

@@ -1,8 +1,5 @@
-import img from "../../../assets/img10 (7).jpg"
-import img1 from "../../../assets/img10 (8).jpg"
-import img2 from "../../../assets/img10 (9).jpg"
+
 import img3 from "../../../assets/img10 (10).jpg"
-import img4 from "../../../assets/img10 (6).jpg"
 
 const Other = () => {
     return (
