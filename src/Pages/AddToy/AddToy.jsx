@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
+import { toyContex } from '../../provider/ToyProvider';
 
 
 
 const AddToy = () => {
 
+    const { user } = useContext(toyContex)
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        // data.sellerName = 
-
+        data.sellerName = user.displayName
+        data.sellerEmail = user.email
         fetch("http://localhost:3000/addtoy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },

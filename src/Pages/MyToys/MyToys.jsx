@@ -1,19 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toyContex } from '../../provider/ToyProvider';
 
 const MyToys = () => {
 
+    const { user } = useContext(toyContex)
+
     const [datas, setDatas] = useState()
-    // const [users, setUsers] = useState(datas)
     const [control, setControl] = useState(true)
-    // console.log(users);
+
 
     useEffect(() => {
-        fetch('http://localhost:3000/mytoys')
+        fetch(`http://localhost:3000/mytoys/email/${user.email}`)
             .then(res => res.json())
-            .then(data => setDatas(data))
-    }, [control])
+            .then(data => {
+                setDatas(data);
+            })
+    }, [user, control])
 
+
+
+
+    // dellete button...
     const handelDelete = id => {
         fetch(`http://localhost:3000/mytoys/${id}`, {
             method: 'DELETE'
@@ -66,15 +74,6 @@ const MyToys = () => {
                         }
                     </tbody>
                 </table>
-            </div>
-
-            <div>
-                {/* {
-                    datas.map(data => <MyToysList
-                        key={data._id}
-                        data={data}
-                    ></MyToysList>)
-                } */}
             </div>
         </div>
     );
