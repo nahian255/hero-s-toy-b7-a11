@@ -1,30 +1,36 @@
 import React from 'react';
+import img1 from "../../../assets/img1.jpg"
+import img2 from "../../../assets/img2.jpg"
+import img3 from "../../../assets/img10 (2).jpg"
+import img4 from "../../../assets/img10 (1).jpg"
+import img5 from "../../../assets/img10 (3).jpg"
+import img6 from "../../../assets/img10 (4).jpg"
 
 const Carosol = () => {
     return (
-        <div >
-            <h1>carosol</h1>
-            <div className="h-96 carousel carousel-vertical rounded-box bg-slate-200">
+        <div className='lg:mx-auto' >
+            <h1 className='text-green-400 text-4xl mb-8'>Another part that you see the Toys</h1>
+            <div className=" lg:mx-auto h-96 lg:w-1/2 carousel carousel-vertical rounded-box bg-slate-200">
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1559703248-dcaaec9fab78.jpg" />
+                    <img src={img1} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1565098772267-60af42b81ef2.jpg" />
+                    <img src={img2} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1572635148818-ef6fd45eb394.jpg" />
+                    <img src={img3} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1494253109108-2e30c049369b.jpg" />
+                    <img src={img4} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1550258987-190a2d41a8ba.jpg" />
+                    <img src={img5} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1559181567-c3190ca9959b.jpg" />
+                    <img src={img6} />
                 </div>
                 <div className="carousel-item h-full">
-                    <img src="/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" />
+                    <img src={img3} />
                 </div>
             </div>
         </div>

@@ -1,27 +1,24 @@
-import React from 'react';
+import img from "../../../assets/img10 (7).jpg"
+import img1 from "../../../assets/img10 (8).jpg"
+import img2 from "../../../assets/img10 (9).jpg"
+import img3 from "../../../assets/img10 (10).jpg"
+import img4 from "../../../assets/img10 (6).jpg"
 
 const Other = () => {
     return (
-        <div className='bg-lime-600 my-8'>
-            <div className="carousel w-full ">
-                <div id="item1" className="carousel-item w-full">
-                    <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
+        <div>
+            <h1 className='text-green-400 text-4xl my-12'>Best Seller Product</h1>
+            <div className="card lg:card-side bg-base-100 my-14  shadow-xl">
+                <div className="w-1/2">
+                    <figure><img src={img3} className="object-cover" alt="Album" /></figure>
                 </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                <div className="card-body w-1/2">
+                    <h2 className="card-title">Spider Man Toy</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div className="card-actions justify-end">
+                        <button className="btn btn-primary">Listen</button>
+                    </div>
                 </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-                </div>
-            </div>
-            <div className="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
-                <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
             </div>
         </div>
     );

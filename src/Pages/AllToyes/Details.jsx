@@ -7,12 +7,15 @@ const Details = () => {
     console.log(details);
     return (
         <div>
-            <div className="card card-side bg-green-200 my-8 shadow-xl">
-                <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{details.name}</h2>
-                    <p> Description : {details.detail}</p>
-                    <h3> SellerName : {details.sellerName}</h3>
+            <div className="card card-side bg-slate-300 my-16 mb-28 shadow-xl">
+                <figure><img src={details.imgUrl} alt="Movie" /></figure>
+                <div className="card-body text-xl text-black italic">
+                    <h2 className="card-title text-red-400 text-2xl text-center">{details?.name}</h2>
+                    <h3> Seller name : {details?.sellerName}</h3>
+                    <h3> Seller email : {details?.sellerEmail}</h3>
+                    <h3> price : {details?.price}</h3>
+                    <p> Available quantity : {details?.avilableQuantity}</p>
+                    <p> Description : {details?.detail}</p>
                 </div>
             </div>
         </div>
