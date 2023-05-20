@@ -31,7 +31,7 @@ const AllToyes = () => {
                 <button onClick={handelSearch} className="btn btn-outline btn-secondary ml-4">Button</button>
 
             </div>
-            <div className="overflow-x-auto  mt-8">
+            <div className="overflow-x-auto mt-8">
                 <table className="table w-9">
                     {/* head */}
                     <thead>
