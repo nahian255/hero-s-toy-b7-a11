@@ -5,7 +5,7 @@ const TabDetails = () => {
     const [tab, sebTab] = useState()
     console.log(tab);
     useEffect(() => {
-        fetch('https://new-project-nahian255.vercel.app/alltoys')
+        fetch('https://server-r3wt8cqsg-nahian255.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => sebTab(data))
     }, [])

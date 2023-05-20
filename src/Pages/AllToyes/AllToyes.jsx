@@ -11,13 +11,13 @@ const AllToyes = () => {
 
 
     useEffect(() => {
-        fetch('https://new-project-nahian255.vercel.app/alltoys')
+        fetch('https://server-r3wt8cqsg-nahian255.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [control])
 
     const handelSearch = () => {
-        fetch(`https://new-project-nahian255.vercel.app/getToysBySearch/${search}`)
+        fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/getToysBySearch/${search}`)
             .then(res => res.json())
             .then(data => setDatas(data))
     }

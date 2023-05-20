@@ -11,7 +11,7 @@ const MyToys = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        fetch(`https://new-project-nahian255.vercel.app/mytoys/email/${user?.email}`)
+        fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/mytoys/email/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setDatas(data);
@@ -20,7 +20,7 @@ const MyToys = () => {
 
     // dellete button...
     const handelDelete = id => {
-        fetch(`https://new-project-nahian255.vercel.app/mytoys/${id}`, {
+        fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/mytoys/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -37,7 +37,7 @@ const MyToys = () => {
     }
 
     const handelSearch = () => {
-        fetch(`https://new-project-nahian255.vercel.app/getToysBySearch/${search}`)
+        fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/getToysBySearch/${search}`)
             .then(res => res.json())
             .then(data => setDatas(data))
     }
