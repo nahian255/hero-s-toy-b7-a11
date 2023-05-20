@@ -28,13 +28,11 @@ const Nav = () => {
                     <Link to="/" className='text-green-900 font-bold text-xl ml-2'>Hero's Toys</Link>
                 </div>
                 <div className="flex-none">
-                    <Link to="/" >Home</Link>
-                    <Link className='lg:mx-2 text-green-400' to="/allToys" >All Toys</Link>
-                    <Link className='lg:mx-2' to="/myToys" >My Toys</Link>
-                    <Link className='lg:mx-2 text-rose-300' to="/addToy" >Add A Toy</Link>
-                    <Link className='mx-2' to='/blog' >Blogs</Link>
-                    <Link className='mx-2' to='/register' > Register</Link>
-
+                    <Link className='lg:mx-2 text-blue-700' to="/" >Home</Link>
+                    <Link className='lg:mx-2 text-black' to="/allToys" >All Toys</Link>
+                    <Link className='lg:mx-2 text-black' to="/myToys" >My Toys</Link>
+                    <Link className='lg:mx-2 text-black' to="/addToy" >Add A Toy</Link>
+                    <Link className='mx-2 text-black' to='/blog' >Blogs</Link>
                     {
                         user ?
                             <>

@@ -11,10 +11,9 @@ const Other = () => {
                 </div>
                 <div className="card-body w-1/2">
                     <h2 className="card-title">Spider Man Toy</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Listen</button>
-                    </div>
+                    <p className='text-green-200 text-xl my-2'>Deatiles : That's is the Our best seeler product.</p>
+                    <p>Like his namesake, Spider-Man's strength and agility stand far above those of the average human, allowing him to lift nearly ten tons and to leap and move at incredible speeds with high accuracy. He also heals faster than normal when injured, though he is not completely immune to viruses and other human ailments.</p>
+                    <button className="bg-red-200 text-black">Buy Now</button>
                 </div>
             </div>
         </div>

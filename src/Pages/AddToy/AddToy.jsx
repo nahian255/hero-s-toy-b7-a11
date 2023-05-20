@@ -15,17 +15,17 @@ const AddToy = () => {
         console.log(data)
         data.sellerName = user.displayName
         data.sellerEmail = user.email
-        fetch("http://localhost:3000/addtoy", {
+        fetch("https://new-project-nahian255.vercel.app/addtoy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
             .then((result) => {
-                // if (result.insertedId) {
-                //     alert('toy added succesfully')
-                //     form.reset()
-                // }
+                if (result.insertedId) {
+                    alert('toy added succesfully')
+                    form.reset()
+                }
             });
         // console.log(data);
     };
@@ -34,7 +34,7 @@ const AddToy = () => {
 
     return (
         <div>
-            <h1>addd toys</h1>
+            <h1 className='text-4xl text-green-600 my-8'>Add Toys</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <input placeholder="Name" className="input input-bordered input-accent w-full max-w-xs" {...register("name")} /> <br />
@@ -51,11 +51,10 @@ const AddToy = () => {
 
                 <input placeholder="Description" className="textarea textarea-bordered textarea-lg w-full max-w-xs" {...register("detail")} /> <br />
 
-                {/* <input {...register("img-url", { required: true })} />
 
-                {errors.exampleRequired && <span>This field is required</span>} */}
+                <button className="btn btn-success my-4"><input type="submit" /></button>
 
-                <input type="submit" />
+
             </form>
         </div>
     );

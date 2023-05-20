@@ -50,12 +50,12 @@ const router = createBrowserRouter([
             {
                 path: 'update/:id',
                 element: <Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost:3000/mytoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-project-nahian255.vercel.app/mytoys/${params.id}`)
             },
             {
                 path: 'details/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:3000/mytoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://new-project-nahian255.vercel.app/mytoys/${params.id}`)
             }
         ]
 

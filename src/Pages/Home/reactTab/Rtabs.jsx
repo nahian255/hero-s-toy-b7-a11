@@ -2,6 +2,8 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Details from '../../AllToyes/Details';
+import TabDetails from './TabDetails';
+import AllToyes from '../../AllToyes/AllToyes';
 
 
 const Rtabs = () => {
@@ -12,22 +14,28 @@ const Rtabs = () => {
                 data-aos-anchor-placement="center-bottom" className='text-green-600 text-4xl mb-8'>Action figure toys Tabs SEction</h1>
             <Tabs>
                 <TabList>
-                    <Tab>Marvel</Tab>
-                    <Tab><h1 className='text-green-600'>DC</h1></Tab>
-                    <Tab>Avengers</Tab>
+                    <Tab ><h1 className='text-purple-800 text-xl'>Marvel</h1></Tab>
+                    <Tab><h1 className='text-red-700 text-xl'>DC</h1></Tab>
+                    <Tab> <h1 className='text-rose-800 text-xl'>Avengers</h1></Tab>
                 </TabList>
 
                 <TabPanel>
                     <div>
-                        <Details></Details>
-                        <Details></Details>
+                        <h1 className='text-xl' >Sub-Category : <span className='text-4xl text-green-600'>Marvel</span></h1>
+                        <AllToyes></AllToyes>
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <div>
+                        <h1 className='text-xl' >Sub-Category : <span className='text-4xl text-green-600'>DC</span></h1>
+                        <AllToyes></AllToyes>
+                    </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 3</h2>
+                    <div>
+                        <h1 className='text-xl' >Sub-Category : <span className='text-4xl text-green-600'>Avengers</span></h1>
+                        <AllToyes></AllToyes>
+                    </div>
                 </TabPanel>
             </Tabs>
         </div>

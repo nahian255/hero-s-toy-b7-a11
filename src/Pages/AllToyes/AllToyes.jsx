@@ -11,13 +11,13 @@ const AllToyes = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/alltoys')
+        fetch('https://new-project-nahian255.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setDatas(data))
     }, [control])
 
     const handelSearch = () => {
-        fetch(`http://localhost:3000/getToysBySearch/${search}`)
+        fetch(`https://new-project-nahian255.vercel.app/getToysBySearch/${search}`)
             .then(res => res.json())
             .then(data => setDatas(data))
     }
@@ -31,12 +31,13 @@ const AllToyes = () => {
                 <button onClick={handelSearch} className="btn btn-outline btn-secondary ml-4">Button</button>
 
             </div>
-            <div className="overflow-x-auto mt-8">
-                <table className="table w-full">
+            <div className="overflow-x-auto  mt-8">
+                <table className="table w-9">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>img</th>
                             <th>Name</th>
                             <th>Category</th>
                             <th>Quantity</th>
@@ -51,13 +52,23 @@ const AllToyes = () => {
                             datas?.map((data, index) => (
                                 <tr>
                                     <th>{index + 1}</th>
+                                    <th>
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src={data?.imgUrl} />
+                                            </div>
+                                        </div>
+                                    </th>
                                     <td>{data.name}</td>
                                     <td>{data.subCategory}</td>
                                     <td>{data.avilableQuantity}</td>
                                     <td>{data.detail}</td>
                                     <td>{data.price}</td>
 
-                                    <td><Link to={`/details/${data._id}`}><button>View details</button></Link></td>
+                                    <td><Link to={`/details/${data._id}`}>
+                                        <button className="btn btn-success">View Details</button>
+
+                                    </Link></td>
 
                                 </tr>
                             ))

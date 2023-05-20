@@ -14,7 +14,7 @@ const Update = () => {
         const updateToys = { price, avilableQuantity, detail }
         console.log(updateToys);
 
-        fetch(`http://localhost:3000/mytoys/${loadedToy._id}`, {
+        fetch(`https://new-project-nahian255.vercel.app/mytoys/${loadedToy._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateToys),

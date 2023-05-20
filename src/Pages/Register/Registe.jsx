@@ -34,10 +34,6 @@ const Registe = () => {
             <h1>register</h1>
             <div className="hero min-h-screen bg-lime-50">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left w-1/2 bg-slate-200">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident  In deleniti eaque aut repudiandae et a id nisi.</p>
-                    </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
                         < form className="card-body">
                             <div className="form-control">
