@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { toyContex } from '../../provider/ToyProvider';
+import useTitle from '../../hook/useTitle';
 
 
 
 const AddToy = () => {
 
     const { user } = useContext(toyContex)
+    useTitle('Add Toys')
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {

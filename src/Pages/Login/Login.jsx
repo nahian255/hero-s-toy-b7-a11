@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { toyContex } from '../../provider/ToyProvider';
+import useTitle from '../../hook/useTitle';
 
 const Login = () => {
 
@@ -9,6 +10,7 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    useTitle('Login')
 
     // console.log(user);
     const location = useLocation();

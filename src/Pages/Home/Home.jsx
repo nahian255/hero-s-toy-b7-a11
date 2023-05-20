@@ -4,8 +4,10 @@ import Gallery from './Gallery/Gallery';
 import Rtabs from './reactTab/Rtabs';
 import Carosol from './Carosol/Carosol';
 import Other from './other/Other';
+import useTitle from '../../hook/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>
