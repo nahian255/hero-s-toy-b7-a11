@@ -15,7 +15,7 @@ const AddToy = () => {
         console.log(data)
         data.sellerName = user.displayName
         data.sellerEmail = user.email
-        fetch("https://server-r3wt8cqsg-nahian255.vercel.app/addtoy", {
+        fetch("https://b7a11-toy-marketplace-server-side-nahian255-theta.vercel.app/addtoy", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

@@ -50,12 +50,12 @@ const router = createBrowserRouter([
             {
                 path: 'update/:id',
                 element: <Update></Update>,
-                loader: ({ params }) => fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/mytoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-nahian255-theta.vercel.app/mytoys/${params.id}`)
             },
             {
                 path: 'details/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`https://new-project-nahian255.vercel.app/mytoys/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a11-toy-marketplace-server-side-nahian255-theta.vercel.app/mytoys/${params.id}`)
             }
         ]
 

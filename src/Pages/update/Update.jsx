@@ -14,7 +14,7 @@ const Update = () => {
         const updateToys = { price, avilableQuantity, detail }
         console.log(updateToys);
 
-        fetch(`https://server-r3wt8cqsg-nahian255.vercel.app/mytoys/${loadedToy._id}`, {
+        fetch(`https://b7a11-toy-marketplace-server-side-nahian255-theta.vercel.app/mytoys/${loadedToy._id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updateToys),
